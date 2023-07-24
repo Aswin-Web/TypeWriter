@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import {Routes,Route} from 'react-router-dom'
+import LandingPage from './pages/LandingPage/LandingPage';
+import Login from './pages/Login/Login';
+import SIgnup from './pages/Signup/SIgnup';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Typewriter from './pages/TypewriterUI/Typewriter';
+import InitialSetup from './pages/InitialSetup/InitialSetup';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="login" element={<Login />} />
+      <Route path="signup" element={<SIgnup />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="setup" element={<InitialSetup />} />
+      <Route path='user' element={<Typewriter/>}/>
+    </Routes>
   );
 }
 
